@@ -1,37 +1,25 @@
 <?php
 
-// Vérifie si des données ont été reçues via POST
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupère les données du corps de la requête POST (au format JSON)
-    $json_data = file_get_contents('php://input');
-    
-    // Vérifie si les données JSON ont été correctement récupérées
-    if ($json_data === false) {
-        http_response_code(400); // Bad Request
-        exit('Erreur lors de la récupération des données JSON.');
-    }
+// Récupération des données POST
+$dataFromKobo = json_decode(file_get_contents('php://input'), true);
 
-    // Décode les données JSON en un tableau associatif
-    $data = json_decode($json_data, true);
+// Traitement des données ici (par exemple, stockage en base de données)
 
-    // Vérifie si le décodage JSON a réussi
-    if ($data === null) {
-        http_response_code(400); // Bad Request
-        exit('Erreur lors du décodage des données JSON.');
-    }
+// Définition des en-têtes de la réponse
+header('Content-Type: application/json');
+// Ajoutez d'autres en-têtes selon les besoins de Kobo Collect
 
-    // Faites quelque chose avec les données (par exemple, les stocker en base de données)
-    if (!empty($data)) {
-        // Exemple : affiche les données
-        echo "Données reçues avec succès:\n";
-        print_r($data);
-    } else {
-        // Les données sont vides
-        echo "Aucune donnée reçue.";
-    }
-} else {
-    // La requête n'est pas une requête POST
-    http_response_code(405); // Method Not Allowed
-    exit('Cette page ne répond qu\'aux requêtes POST.');
-}
+// Réponse à Kobo Collect
+http_response_code(200);
+echo json_encode(array('message' => 'Données reçues avec succès'));
+
+// Afficher les données sur l'écran
+echo "datas :";
+echo "</br>"; 
+echo '<h2>Données reçues :</h2>';
+echo '<pre>';
+print_r($dataFromKobo);
+echo '</pre>';
+
 ?>
+
