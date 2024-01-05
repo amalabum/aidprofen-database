@@ -1,5 +1,6 @@
 <?php
-
+// Définition des en-têtes de la réponse
+header('Content-Type: application/json');
 // Récupération des données POST
 $dataFromKobo = json_decode(file_get_contents('php://input'), true);
 
@@ -7,7 +8,8 @@ $dataFromKobo = json_decode(file_get_contents('php://input'), true);
 
 // Réponse à Kobo Collect
 http_response_code(200);
-if(!emty($dataFromKobo)){
+
+if(!empty($dataFromKobo)){
     echo json_encode(array('message' => 'Données reçues avec succès'));
     // Enregistrez les données dans un fichier de journal
 $logFilePath = 'myAPI/fichier.log';
