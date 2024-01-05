@@ -5,16 +5,19 @@ $inputData = file_get_contents('php://input');
 $dataFromKobo = json_decode($inputData, true);
 
 // Vérifier si la requête a échoué
-if ($dataFromKobo === null && json_last_error() !== JSON_ERROR_NONE) {
-    http_response_code(400); // Bad Request
-    echo json_encode(array('error' => 'Erreur lors du décodage JSON.'));
-    exit;
-}
-elseif($dataFromKobo != null){
-    echo json_encode(array('message' => 'Données reçues avec succès'));
+
+if($dataFromKobo != null){
+    if(json_last_error() == JSON_ERROR_NONE){
+        echo json_encode(array('message' => 'Données reçues avec succès'));
+    }
+    elseif(json_last_error() !== JSON_ERROR_NONE){
+        http_response_code(400); // Bad Request
+        echo json_encode(array('error' => 'Erreur lors du décodage JSON.'));
+        exit;
+    }   
 }
 else{
-    echo json_encode(array('message' => 'Données reçues en attente'));
+    echo json_encode(array('message' => 'en attente des données...'));
 
 }
 
