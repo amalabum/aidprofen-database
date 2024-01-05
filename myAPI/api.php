@@ -9,6 +9,10 @@ $dataFromKobo = json_decode($inputData, true);
 if($dataFromKobo != null){
     if(json_last_error() == JSON_ERROR_NONE){
         echo json_encode(array('message' => 'Données reçues avec succès'));
+        http_response_code(200);
+        echo "<script>
+             console.log('données bien reçus')
+             </script>";
     }
     elseif(json_last_error() !== JSON_ERROR_NONE){
         http_response_code(400); // Bad Request
