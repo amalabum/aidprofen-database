@@ -32,34 +32,18 @@
                             <div class="main-body">
                                 <div class="page-wrapper">
                                     <!-- Page-body start -->
-                                    <div class="row ">
-                                    <div class="page-body col-6">
+                                    <div class="page-body">
                                         <?php 
-                                            $list1=array(1=>"kalinga",2=>"katale",3=>"lushagala",3=>"bweremana");                                            
-                                            $MT_FORMULAIRES->MT_StandardFormsV1("action_add_volet","Ajouter un volet",
+                                            $MT_FORMULAIRES->MT_StandardFormsV1("config_localite","Ajouter une localité",
                                                 array(
-                                                    array("text","designation","Nom du volet","","designation_feedback"),
-                                                    array("text","description","Informations supplémentaires sur ce volet","","description_feedback"),
+                                                    array("text","localite","Nom de la localité","","localite_feedback"),
                                                 ),
                                                 array("id_SubmitClick",
                                                        "Enregistrer",
                                                        "id_addactivites",
-                                                       "conf-volets",
-                                                       "Ajouter un autre volet"));                                            
+                                                       "conf-localites",
+                                                       "une autre localité"));                                            
                                         ?>
-                                    </div>
-                                    <div class="page-body col-6">
-                                        <?php 
-                                            $MT_Tables->MT_StandardTableV2("volets",array('id_volet',100,'Gérer les volets','',3,'conf-volets'),
-                                            array('designation','description','-',''),
-                                            array('icone & denomination','autres informations','action',),
-                                            array(
-                                                array("Modifier le volet","conf-volets",array("id_element_a_modifier"=>"id_volet")),
-                                                array("Suspendre","conf-volets",array("id_element_a_suspendre"=>"id_volet")),
-                                                array("Supprimer","conf-volets",array("element_a_supprimer"=>"id_volet"))
-                                            ));                                           
-                                        ?>
-                                        </div>
                                     </div>
 
                                     <!-- Page-body end -->
@@ -79,16 +63,16 @@
     var config = {
     buttonId: "id_SubmitClick",
     inputElements: [
-        { id: '#designation', feedbackLabel: '#designation_feedback', errorMessage: 'Designation must be at least 3 characters' },
-        { id: '#description', feedbackLabel: '#description_feedback', errorMessage: 'Description must be at least 5 characters' },    ],
+        { id: '#localite', feedbackLabel: '#localite_feedback', errorMessage: 'la localité doit avoir au minimun 5 characters' },
+    
+    ],
     validationRules: {
-        '#designation': function(value) { return value && value.length >= 3; },
-        '#description': function(value) { return value && value.length >= 5; },
+        '#localite': function(value) { return value && value.length >= 3; },
         // Ajoutez d'autres règles de validation au besoin
     }
     };
     handleSubmitButtonState(config);
-    Form_submition("#action_add_volet","id_SubmitClick", "progress","id_addactivites");
+    Form_submition("#config_localite","id_SubmitClick", "progress","id_addactivites");
     });
 
     </script>

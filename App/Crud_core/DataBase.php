@@ -2,9 +2,9 @@
 class DataBase{
     
      Public $servername = "localhost";
-    Public $username = "u764638045_adiminAID";
-    Public $password = "Aidpro@0024";
-    Public $dbname = "u764638045_aidprofen_db";
+    Public $username = "root";
+    Public $password = "";
+    Public $dbname = "aidprofen_org";
     public $db;
 
     Public function db_con(){

@@ -30,3 +30,4 @@
     <script type="text/javascript" src="Views/applets/assets/pages/notification/notification.js "></script>
     <script type="text/javascript" src="Views/applets/assets/js/bootstrap-growl.min.js"></script>
     <script type="text/javascript" src="Views/applets/assets/js/customisedJS/notifications.js"></script>
+    <script type="text/javascript" src="Views/applets/assets/js/customisedJS/inputController.js"></script>

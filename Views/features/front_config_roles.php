@@ -20,10 +20,11 @@
                   <div class="pcoded-content">
                       <!-- Page-header start -->
                       <?php 
-                      $param1="ACTIVITES";
-                      $param2="Admin";
-                      $param3="Confinguration du projet";                      
-                      $MT_Headers->ContextualHeader($param1,"$param2/$param3");
+                      $role="structures";
+                      $localité="BWEREMANA";
+                      $volet="MASCULINITE POSITIVE";
+                      $MT_Headers->ContextualHeader($role,"$localité/$volet");
+
                       ?>
                       <!-- Page-header end -->
                         <div class="pcoded-inner-content">
@@ -33,27 +34,17 @@
                                     <!-- Page-body start -->
                                     <div class="page-body">
                                         <?php 
-                                           
-                                            $query=$MT_QueryInterface->limit_Get("volets", array("id_volet"=>100));
-                                            $volets = $MT_QueryInterface->fetched_datas;
-                                            $keyValueArray = array();                                            
-                                            foreach ($volets as $datas) :
-                                                $keyValueArray[$datas["id_volet"]] = $datas["designation"];
-                                            endforeach;
-                                            $MT_FORMULAIRES->MT_StandardFormsV1("config_activites","Nouvelle activité",
+                                            $list1=array(1=>"kalinga",2=>"katale",3=>"lushagala",3=>"bweremana");                                            
+                                            $MT_FORMULAIRES->MT_StandardFormsV1("conf_roles","Ajouter un Poste",
                                                 array(
-                                                    array("text","designation","Nom du volet","","designation_feedback",""),
-                                                    array("text","description","Informations supplémentaires sur ce volet","","description_feedback",""),
-                                                    array("select","choix_1","Appartient au volet",$keyValueArray,"d-none","required"),
-                                                    array("select","choix_2","volet 2 (si nécessaire)",$keyValueArray,"d-none",0),
-                                                    array("select","choix_3","volet 3 (si nécessaire)",$keyValueArray,"d-none",0),
-                                                    array("select","choix_4","volet 4 (si nécessaire)",$keyValueArray,"d-none",0),
+                                                    array("text","designation","Nom du poste","","designation_feedback"),
+                                                    array("text","description","Informations supplémentaires sur ce poste","","description_feedback"),
                                                 ),
                                                 array("id_SubmitClick",
                                                        "Enregistrer",
                                                        "id_addactivites",
-                                                       "conf-activites",
-                                                       "Ajouter une autre activité"));                                            
+                                                       "conf-postes",
+                                                       "Ajouter un autre poste"));                                            
                                         ?>
                                     </div>
 
@@ -75,9 +66,7 @@
     buttonId: "id_SubmitClick",
     inputElements: [
         { id: '#designation', feedbackLabel: '#designation_feedback', errorMessage: 'Designation must be at least 3 characters' },
-        { id: '#description', feedbackLabel: '#description_feedback', errorMessage: 'Description must be at least 5 characters' },
-    
-    ],
+        { id: '#description', feedbackLabel: '#description_feedback', errorMessage: 'Description must be at least 5 characters' },    ],
     validationRules: {
         '#designation': function(value) { return value && value.length >= 3; },
         '#description': function(value) { return value && value.length >= 5; },
@@ -85,7 +74,7 @@
     }
     };
     handleSubmitButtonState(config);
-    Form_submition("#config_activites","id_SubmitClick", "progress","id_addactivites");
+    Form_submition("#conf_roles","id_SubmitClick", "progress","id_addactivites");
     });
 
     </script>

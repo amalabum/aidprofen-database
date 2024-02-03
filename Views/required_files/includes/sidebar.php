@@ -3,9 +3,9 @@
                       <div class="pcoded-inner-navbar main-menu">
                           <div class="">
                               <div class="main-menu-header">
-                                  <img class="img-80 img-radius" src="Views/applets/assets/images/avatar-4.jpg" alt="User-Profile-Image">
+                                  <img class=" img-radius" src="Views/applets/assets/images/avatar-4.png" alt="User-Profile-Image">
                                   <div class="user-details">
-                                      <span id="more-details">admin<i class="fa fa-caret-down"></i></span>
+                                      <span id="more-details">kasong Eliézer<i class="fa fa-caret-down"></i></span>
                                   </div>
                               </div>
         
@@ -31,7 +31,7 @@
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="active">
                                   <a href="dashboard" class="waves-effect waves-dark">
-                                      <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                      <span class="pcoded-micon"><i class="ti-dashboard"></i><b>D</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
@@ -100,7 +100,7 @@
                              </li>
                              <li class="pcoded-hasmenu">
                                   <a href="javascript:void(0)" class="waves-effect waves-dark">
-                                  <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
+                                  <span class="pcoded-micon"><i class="ti-server"></i><b>FC</b></span>
                                                                         <span class="pcoded-mtext">RAPPORTS</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
@@ -137,12 +137,32 @@
                                
                              </li>
                             </ul>   
-                          <div class="pcoded-navigation-label" data-i18n="nav.category.forms">volets, activites, zones</div>
+                          <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Configuration du projet</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li>
-                                  <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                  <a href="conf-volets" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-flag-alt"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Volets</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <a href="conf-activités" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-clipboard"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Activites</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <a href="conf-localites" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-location-pin"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Localités</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <a href="conf-zones" class="waves-effect waves-dark d-none">
                                       <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
-                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Configurations</span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Zones</span>
+                                      <span class="pcoded-mcaret"></span>
+                                  </a>
+                                  <a href="conf-utilisateurs" class="waves-effect waves-dark">
+                                      <span class="pcoded-micon"><i class="ti-user"></i><b>FC</b></span>
+                                      <span class="pcoded-mtext" data-i18n="nav.form-components.main">Utilisateurs</span>
                                       <span class="pcoded-mcaret"></span>
                                   </a>
                               </li>

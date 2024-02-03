@@ -31,21 +31,33 @@
                             <div class="main-body">
                                 <div class="page-wrapper">
                                     <!-- Page-body start -->
-                                    <div class="page-body">
+                                    <div class="row">
+                                    <div class="page-body col-6">
                                         <?php 
-                                            $list1=array(1=>"kalinga",2=>"katale",2=>"lushagla",2=>"bweremana");                                            
+                                            $list1=array(1=>"kalinga",2=>"katale",3=>"lushagla",4=>"bweremana");                                            
                                             $MT_FORMULAIRES->MT_StandardFormsV1("action_add_activite","Rémonter les données sur une activité",
                                                 array(
-                                                    array("text","Theme","Thème de leactivité","","theme_feeback"),
-                                                    array("select","Localité","Veuillez choisir une localité",$list1,"localité_feeback"),
-                                                    array("date","DebutActivite","","debut_activite","debutactivite_feeback"),
-                                                    array("date","FinActivite","","fin_activite","finactivite_feeback"),
-                                                    array("number","NombreParticipans","PARTICIPANTS","","participants_feeback")                                                                
-                                            ),array("id_SubmitClick","Enregistrer l'activité","id_addparticipants","#","ajouter aussi les partiticapant"));
+                                                    array("text","Theme","Thème de leactivité","","theme_feeback",""),
+                                                    array("select","Localité","Veuillez choisir une localité",$list1,"localité_feeback",""),
+                                                    array("date","DebutActivite","","debut_activite","debutactivite_feeback",""),
+                                                    array("date","FinActivite","","fin_activite","finactivite_feeback",""),
+                                                    array("number","NombreParticipans","PARTICIPANTS","","participants_feeback","")                                                                
+                                            ),array("id_SubmitClick","Enregistrer l'activité","id_addparticipants","ajouterUneactivité","ajouter aussi les partiticapant"));
                                             
                                         ?>
                                     </div>
-
+                                        <div class="page-body col-6">
+                                        <?php 
+                                            $MT_Tables->MT_StandardTableV2("roles",array('id_role','3','Gérer les utilisateures','user'),
+                                            array('designation','designation','action'),
+                                            array('Avatars & noms','designation','action'),
+                                            array(
+                                                array("Reafecter ailleur","conf-hommes-engagés",array("param1"=>"id_item","param2"=>"id_item3")),
+                                                array("Modifier","conf-hommes-engagés",array("affet"=>"id_item","param2"=>"id_item3"))
+                                            ));                                           
+                                        ?>
+                                        </div>
+                                    </div>
                                     <!-- Page-body end -->
                                 </div>
                             </div>
@@ -58,7 +70,7 @@
     <!-- Required Jquery -->
     <?php require "Views/required_files/includes/Custom_includes/javascriptIncusions.php";?>
     <script>    
-    function handleSubmitButtonState() {
+    function handleSubmitButtonStat() {
     var Button_submit = document.getElementById("id_SubmitClick");
     Button_submit.setAttribute("class", "btn btn-out-dashed waves-light btn-disabled btn-square disabled");
     Button_submit.disabled = true;
@@ -130,7 +142,7 @@
 
     // Appel de la fonction lors du chargement du document
     $(document).ready(function() {
-    handleSubmitButtonState();
+        handleSubmitButtonStat();
     Form_submition("#action_add_activite","id_SubmitClick", "progress","id_addparticipants");
     });
 

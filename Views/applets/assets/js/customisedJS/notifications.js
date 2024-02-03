@@ -70,6 +70,8 @@ function Form_submition(actioned_form_id,submitButton, progressBar, participants
                     notify("bottom", "right", "inverse", "fadeInRight", "fadeOutRight");
                 }
             }
+            
+            
         });
         return false;
     });

@@ -16,14 +16,14 @@
                           </div>
                       </div>
                       <a href="index.html">
-                          <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
+                          <img class="img-fluid" src="Views/applets/assets/images/favic_aid.png" alt="Logo" width="30px" /> <span style="font-size:12px !important;">aidprofen dashboard</span> 
                       </a>
                       <a class="mobile-options waves-effect waves-light">
                           <i class="ti-more"></i>
                       </a>
                   </div>
                 
-                  <div class="navbar-container container-fluid">
+                  <div class="navbar-container container-fluid d-none">
                       <ul class="nav-left">
                           <li>
                               <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
