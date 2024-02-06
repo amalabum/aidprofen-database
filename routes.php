@@ -1,6 +1,6 @@
 <?php
 Routeur::get ("/",function (){
-    require "Views/features/loginFront.php";
+    require "Views/index.php";
 });
 Routeur::get ("/DataMGRpanel",function (){
     require "Views/index.php";
@@ -58,5 +58,22 @@ Routeur::get ("/conf-structures",function (){
 });
 Routeur::get ("/conf_structure",function (){
     require "Views/ajax_connectors/config_structure.php";
+});
+// pages 
+Routeur::get ("/add",function (){
+    require "Views/standard_pages/insert.php";
+});
+Routeur::get ("/update",function (){
+    require "Views/standard_pages/update.php";
+});
+Routeur::get ("/grid",function (){
+    require "Views/standard_pages/grid.php";
+});
+/*******************
+ * Login
+*********************** */
+
+Routeur::get ("/login_controler",function (){
+    require "Views/ajax_connectors/control_logins.php";
 });
 ?>

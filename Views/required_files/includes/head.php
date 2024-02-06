@@ -16,5 +16,7 @@
       <link rel="stylesheet" type="text/css" href="Views/applets/assets/pages/notification/notification.css">
 
       <link rel="stylesheet" type="text/css" href="Views/applets/assets/css/style.css">
+      <link rel="stylesheet" href="Views/applets/assets/css/customised-style/style.css">
+
       
   </head>

@@ -3,6 +3,7 @@ function handleSubmitButtonState(config) {
     var inputElements = config.inputElements;
     var validationRules = config.validationRules;
 
+
     var Button_submit = document.getElementById(buttonId);
     Button_submit.setAttribute("class", "btn btn-out-dashed waves-light btn-disabled btn-square disabled");
     Button_submit.disabled = true;

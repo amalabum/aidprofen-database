@@ -4,7 +4,7 @@ function Form_submition(actioned_form_id,submitButton, progressBar, participants
     var participants = document.getElementById(participantsElement);
 
     $(actioned_form_id).on('submit', function(e) {
-        progressb.style.display = "block";
+    progressb.style.display = "block";
         e.preventDefault();
         var $this = $(this);
         var formData = new FormData(this);
@@ -68,6 +68,52 @@ function Form_submition(actioned_form_id,submitButton, progressBar, participants
                         });
                     }
                     notify("bottom", "right", "inverse", "fadeInRight", "fadeOutRight");
+                }
+            }
+            
+            
+        });
+        return false;
+    });
+    // $('#plus').on('click', function(e) {
+    //     window.location.href = 'detail_maison?m=' + maison_id;
+    // });
+}
+
+
+function Login_on_plateform(actioned_form_id,submitButton,element_retour) {
+    var Button_1 = document.getElementById(submitButton);
+    var RETOur = document.getElementById(element_retour);
+    RETOur.style.display = "none";
+
+    // RETOur.css('display', 'none');
+
+    $(actioned_form_id).on('submit', function(e) {
+        //progressb.style.display = "block";
+        e.preventDefault();
+        var $this = $(this);
+        var formData = new FormData(this);
+
+        $.ajax({
+            
+            url: $this.attr('action'),
+            enctype: 'multipart/form-data',
+            type: $this.attr('method'),
+            data: formData,
+            dataType: 'json',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(json) {
+                if (json.status == 201) {
+                    Button_1.setAttribute("class", "btn btn-danger waves-light btn-disabled btn-square disabled");
+                    window.location.href = 'add?conf_taged_action=config_volets_new';
+                }
+                else if(json.status == 202){
+                    console.log("erreur");
+                    Button_1.setAttribute("class", "btn btn-danger waves-light btn-disabled btn-square disabled");
+                    var retournlabel = document.getElementById(element_retour);
+                    retournlabel.style.display = "block";                  
                 }
             }
             

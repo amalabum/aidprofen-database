@@ -5,7 +5,7 @@
                               <div class="main-menu-header">
                                   <img class=" img-radius" src="Views/applets/assets/images/avatar-4.png" alt="User-Profile-Image">
                                   <div class="user-details">
-                                      <span id="more-details">kasong Eliézer<i class="fa fa-caret-down"></i></span>
+                                      <span id="more-details"> <?php echo $_SESSION['nom']; e_(" "); echo $_SESSION["postnom"]; ?><i class="fa fa-caret-down"></i></span>
                                   </div>
                               </div>
         
@@ -14,7 +14,7 @@
                                       <li class="more-details">
                                           <a href="user-profile.html"><i class="ti-user"></i>View Profile</a>
                                           <a href="#!"><i class="ti-settings"></i>Settings</a>
-                                          <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                                       
                                       </li>
                                   </ul>
                               </div>
@@ -30,7 +30,7 @@
                           </div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li class="active">
-                                  <a href="dashboard" class="waves-effect waves-dark">
+                                  <a href="./" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-dashboard"></i><b>D</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.dash.main">Dashboard</span>
                                       <span class="pcoded-mcaret"></span>
@@ -44,7 +44,7 @@
                                   </a>
                                   <ul class="pcoded-submenu">
                                       <li class=" ">
-                                          <a href="ajouterUneactivité" class="waves-effect waves-dark">
+                                          <a href="add?conf_taged_action=remonter-les-données-d-une-activité" class="waves-effect waves-dark">
                                               <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                               <span class="pcoded-mtext" data-i18n="nav.basic-components.alert">Rémonter les données</span>
                                               <span class="pcoded-mcaret"></span>
@@ -140,7 +140,7 @@
                           <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Configuration du projet</div>
                           <ul class="pcoded-item pcoded-left-item">
                               <li>
-                                  <a href="conf-volets" class="waves-effect waves-dark">
+                                  <a href="add?conf_taged_action=config_volets_new" class="waves-effect waves-dark">
                                       <span class="pcoded-micon"><i class="ti-flag-alt"></i><b>FC</b></span>
                                       <span class="pcoded-mtext" data-i18n="nav.form-components.main">Volets</span>
                                       <span class="pcoded-mcaret"></span>

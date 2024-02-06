@@ -77,9 +77,6 @@
     Form_submition("#conf_roles","id_SubmitClick", "progress","id_addactivites");
     });
 
-    </script>
-
-    
+    </script>    
 </body>
-
 </html>

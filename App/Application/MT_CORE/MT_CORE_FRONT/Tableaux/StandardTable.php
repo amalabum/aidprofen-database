@@ -223,7 +223,7 @@ Class StandardTable {
                     <button class="btn btn-danger dropdown-toggle waves-effect waves-light" style="border-radius:10px;" type="button" id="dropdown-6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><i class="ti-settings"></i></button>
                     <div class="dropdown-menu" aria-labelledby="dropdown-6" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                     <?php 
-                                  foreach ($taged_actions as $params_configs):
+                                foreach ($taged_actions as $params_configs):
                                      
                                  ?>
                                  <a class="dropdown-item" 

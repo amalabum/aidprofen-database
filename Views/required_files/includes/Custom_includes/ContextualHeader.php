@@ -2,8 +2,7 @@
         Function ContextualHeader(){ 
 ?>           
                  <div class="page-header">
-                          <div class="page-block" style="background-image:url('Views/applets/assets/images/pdis.webp');
-                          background-repeat:no-repeat; background-size:container;">
+                          <div class="page-block">
                               <div class="row align-items-center">
                                   <div class="col-md-8">
                                       <div class="page-header-title">

@@ -23,7 +23,7 @@
                       </a>
                   </div>
                 
-                  <div class="navbar-container container-fluid d-none">
+                  <div class="navbar-container container-fluid ">
                       <ul class="nav-left">
                           <li>
                               <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
@@ -44,7 +44,7 @@
                           </li>
                       </ul>
                       <ul class="nav-right">
-                          <li class="header-notification">
+                          <li class="header-notification d-none">
                               <a href="#!" class="waves-effect waves-light">
                                   <i class="ti-bell"></i>
                                   <span class="badge bg-c-red"></span>
@@ -87,40 +87,19 @@
                               </ul>
                           </li>
                           <li class="user-profile header-notification">
-                              <a href="#!" class="waves-effect waves-light">
-                                  <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
-                                  <span>John Doe</span>
-                                  <i class="ti-angle-down"></i>
-                              </a>
-                              <ul class="show-notification profile-notification">
-                                  <li class="waves-effect waves-light">
-                                      <a href="#!">
-                                          <i class="ti-settings"></i> Settings
-                                      </a>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <a href="user-profile.html">
-                                          <i class="ti-user"></i> Profile
-                                      </a>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <a href="email-inbox.html">
-                                          <i class="ti-email"></i> My Messages
-                                      </a>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <a href="auth-lock-screen.html">
-                                          <i class="ti-lock"></i> Lock Screen
-                                      </a>
-                                  </li>
-                                  <li class="waves-effect waves-light">
-                                      <a href="auth-normal-sign-in.html">
-                                          <i class="ti-layout-sidebar-left"></i> Logout
-                                      </a>
-                                  </li>
-                              </ul>
+                          <form method="post">
+                                          <button type="submit" name="logout" style="border-radius:70px;" class="btn btn-danger mt-1" ><i class="ti-layout-sidebar-left"></i>Se déconnecter</button>
+                                          <?php 
+                                          if(isset($_POST['logout'])){
+                                            session_destroy();
+                                        }                                          
+                                          ?>
+                                          </form>                            
                           </li>
+                          
                       </ul>
                   </div>
+
+                  
               </div>
           </nav>

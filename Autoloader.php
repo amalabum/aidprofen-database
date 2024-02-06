@@ -23,8 +23,16 @@ function autoloadHeaders($className) {
         require $filename;
     }
 }
+function autoloadPages($className) {
+    $filename =__DIR__.DIRECTORY_SEPARATOR. "App/Application/MT_CORE/MT_CORE_FRONT/Pages/" . $className . ".php";
+    if (is_readable($filename)) {
+        require $filename;
+    }
+}
 spl_autoload_register("autoloadcrudClasses");
 spl_autoload_register("autoloadTables");
 spl_autoload_register("autoloadFormulaires");
 spl_autoload_register("autoloadHeaders");
+spl_autoload_register("autoloadPages");
+
 ?>
